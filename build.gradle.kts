@@ -13,14 +13,16 @@ repositories {
 }
 
 dependencies {
+    implementation ("io.javalin:javalin:4.4.0")
+    implementation ("com.fasterxml.jackson.core:jackson-databind:2.12.4")
     testImplementation(kotlin("test"))
     implementation("org.jsoup:jsoup:1.14.3")
     implementation("org.postgresql:postgresql:42.3.3")
     implementation ("javax.xml.bind:jaxb-api:2.3.1")
     implementation("org.java-websocket:Java-WebSocket:1.5.2")
-    implementation ("com.google.code.gson:gson:2.8.9")
+    implementation ("com.google.code.gson:gson:2.9.0")
     implementation ("org.hibernate:hibernate-core:6.0.0.Final")
-    implementation ("org.hibernate.common:hibernate-commons-annotations:6.0.0.CR1")
+    implementation ("org.hibernate.common:hibernate-commons-annotations:6.0.0.Final")
     implementation ("org.hibernate.validator:hibernate-validator:7.0.4.Final")
     implementation ("org.hibernate:hibernate-c3p0:6.0.0.Final")
     implementation ("jakarta.el:jakarta.el-api:5.0.0-RC1")
