@@ -14,6 +14,7 @@ repositories {
 
 dependencies {
     implementation ("io.javalin:javalin:4.4.0")
+    implementation ("org.slf4j:slf4j-simple:1.7.31")
     implementation ("com.fasterxml.jackson.core:jackson-databind:2.12.4")
     testImplementation(kotlin("test"))
     implementation("org.jsoup:jsoup:1.14.3")

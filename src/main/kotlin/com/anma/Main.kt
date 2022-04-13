@@ -7,6 +7,7 @@ import com.google.gson.JsonArray
 
 import io.javalin.Javalin
 import io.javalin.apibuilder.ApiBuilder.*
+import models.Person
 
 
 fun main(args: Array<String>) {
@@ -15,11 +16,11 @@ fun main(args: Array<String>) {
     // ==========
     val db = DBExe()
     val gson: Gson = GsonBuilder().create()
-    val obj = JsonArray()
+//    val obj = JsonArray()
+    val persons = ArrayList<Person>()
 
     db.allPersons().forEach {
-        val jsonPerson = gson.toJson(it)
-        obj.add(jsonPerson)
+        persons.add(it)
     }
 //    println(obj)
 
@@ -43,8 +44,9 @@ fun main(args: Array<String>) {
 //      }
 //   }.start(8088)
     app.get("/persons") { ctx ->
-        ctx.json(obj)
-        ctx.status(200)
+        ctx.contentType("application/json")
+            .json(persons)
+            .status(200)
     }
     app.start(8088)
 
